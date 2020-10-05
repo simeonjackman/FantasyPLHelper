@@ -1,14 +1,28 @@
 # FantasyPLHelper
 Helper for fantasy pl transfers
 
-Install dependencies in virtualenv: 
+
+## Installation and Running
+
+* Install dependencies in virtualenv: 
 ```
 pipenv install
 ```
 
-Run through virtualenv: 
+* Run virtualenv: 
 ```
-pipenv run python3 server.py
+source env/bin/activate
+```
+
+
+* Run install dependencies in virtualenv: 
+```
+pip3 install -r requirements.txt
+```
+
+* Run server in virtualenv: 
+```
+python3 main.py
 ```
 
 
