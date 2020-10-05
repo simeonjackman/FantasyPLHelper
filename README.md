@@ -17,4 +17,8 @@ pipenv run python3 server.py
 ## /players
 ```
 ?name={name}
+?min_cost={cost}
+?max_cost={cost}
+?goals_scored{goals}
+?assists{assists}
 ```
