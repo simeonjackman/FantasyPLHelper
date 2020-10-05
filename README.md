@@ -10,5 +10,3 @@ Run through virtualenv:
 ```
 pipenv run python3 server.py
 ```
-
-Hello World
