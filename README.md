@@ -10,3 +10,11 @@ Run through virtualenv:
 ```
 pipenv run python3 server.py
 ```
+
+
+# API DOC
+
+## /players
+```
+?name={name}
+```
