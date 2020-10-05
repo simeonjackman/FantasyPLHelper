@@ -1,6 +1,6 @@
 import json
 
-def load_players():
+def load():
 	with open('cached-data/elements.json', 'r') as openfile: 
 	
 		# Reading from json file 

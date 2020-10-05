@@ -11,10 +11,10 @@ def home():
     return "<h1>this should not be a server rendered webpage</h1>"
 
 # call /players to get all players
-from players import load_players
+from dataloader import players
 @app.route('/players', methods=['GET'])
 def show_players():   
-    return load_players()
+    return players.load()
 
     
 
