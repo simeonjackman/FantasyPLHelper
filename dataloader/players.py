@@ -9,7 +9,7 @@ def load(args):
 		json_object = json.load(openfile)
 
 	# filter name
-	if args.get('name') != '':
+	if args.get('name') is not None and args.get('name') != '':
 		filter_name = args.get('name')
 		print("filtering name for {}".format(filter_name))
 		json_object = list(filter(lambda x:
