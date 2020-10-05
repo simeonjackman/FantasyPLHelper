@@ -14,7 +14,8 @@ def home():
 from dataloader import players
 @app.route('/players', methods=['GET'])
 def show_players():   
-    return players.load()
+    # pass get url args for filtering
+    return players.load(flask.request.args)
 
     
 
