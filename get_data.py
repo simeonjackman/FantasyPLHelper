@@ -14,7 +14,7 @@ def get_data():
     # want to cache each entry in the response for clarity and readability
     print("caching data")
     for key in reponse.keys():
-        with open("./cached-data/{}.json".format(key), "w") as outfile: 
+        with open("/tmp/{}.json".format(key), "w") as outfile: 
             # Serializing json  
             json_object = json.dumps(reponse[key], indent = 4) 
             outfile.write(json_object) 

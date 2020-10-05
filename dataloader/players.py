@@ -4,7 +4,7 @@ import requests
 def load(args):
 	print(args)
 	
-	with open('cached-data/elements.json', 'r') as openfile: 
+	with open('/tmp/elements.json', 'r') as openfile: 
 		# Reading from json file 
 		json_object = json.load(openfile)
 
