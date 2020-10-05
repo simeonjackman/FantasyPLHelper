@@ -28,16 +28,19 @@ def load(args):
 		print("filtering cost < {}".format(max_cost))
 		json_object = list(filter(lambda x: max_cost > x['now_cost'], json_object))
 
+	# filter goals
 	if args.get('goals_scored') is not None and args.get('goals_scored') != '':
 		goals_scored = args.get('goals_scored', default=0, type=int)
 		print("filtering goals >= {}".format(goals_scored))
 		json_object = list(filter(lambda x: goals_scored < x['goals_scored'], json_object))
 
+	# filter assists
 	if args.get('assists') is not None and args.get('assists') != '':
 		assists = args.get('assists', default=0, type=int)
 		print("filtering assists >= {}".format(assists))
 		json_object = list(filter(lambda x: assists < x['assists'], json_object))
 
+	# filter goals + assists
 	if args.get('scorer_points') is not None and args.get('scorer_points') != '':
 		scorer_points = args.get('scorer_points', default=0, type=int)
 		print("filtering scorer points >= {}".format(scorer_points))
