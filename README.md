@@ -35,4 +35,7 @@ python3 main.py
 ?max_cost={cost}
 ?goals_scored{goals}
 ?assists{assists}
+?sort_by{key}
+?show{key1,key2,...}
+ex: {host}/players?sort_by=assists&name=f&show=first_name,second_name,goals_scored&min_cost=80
 ```

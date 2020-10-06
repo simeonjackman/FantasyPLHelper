@@ -10,7 +10,7 @@ def load(args):
 
 	# filter name
 	if args.get('name') is not None and args.get('name') != '':
-		filter_name = args.get('name')
+		filter_name = args.get('name', default='', type=str)
 		print("filtering name for {}".format(filter_name))
 		json_object = list(filter(lambda x:
 			filter_name.lower() in x['first_name'].lower() or 
@@ -46,4 +46,21 @@ def load(args):
 		print("filtering scorer points >= {}".format(scorer_points))
 		json_object = list(filter(lambda x: scorer_points < x['assists'] + x['goals_scored'], json_object))
 
+	# sort_by
+	if args.get('sort_by') is not None and args.get('sort_by') != '' and len(json_object) > 0 and args.get('sort_by') in json_object[0]:
+		sort_key = args.get('sort_by', default='', type=str)
+		print("sorting by >= {}".format(sort_key))
+		json_object = list(sorted(json_object, key = lambda i: (i[sort_key])))
+
+	# show fields
+	if args.get('show') is not None and args.get('show') != '' and len(json_object) > 0:
+		show = args.get('show', default='', type=str)
+		show_keys = show.split(',')
+		show_keys = list(filter(lambda key: key in json_object[0], show_keys)) # remove invalid keys
+		print("showing >= {}".format(show_keys))
+		json_object = list(map( lambda object: { key: object[key] for key in show_keys }, json_object))
+
+	# check empty
+	if len(json_object) == 0:
+		return '[]'
 	return json.dumps(json_object)
