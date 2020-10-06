@@ -1,2 +1,4 @@
 cached-data/*
 env/*
+__pycache__
+.vscode/
