@@ -30,7 +30,7 @@ python3 main.py
 Make sure you have the docker toolbox installed.
 
 * Start by building the container:
-```bash
+```
 make build
 ```
 
@@ -44,7 +44,7 @@ make run
 docker ps
 > CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS              PORTS                    NAMES
 > e67904e80b84        fantasy_pl_helper:latest   "python main.py"    1 second ago        Up 1 second         0.0.0.0:5000->5000/tcp   fantasy_docker
-``
+```
 
 * Test the application on localhost.
 
@@ -57,9 +57,6 @@ make stop
 ```
 make clean
 ```
-
-
-
 
 
 # API DOC
