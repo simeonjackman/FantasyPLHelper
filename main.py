@@ -17,6 +17,13 @@ def show_players():
     # pass get url args for filtering
     return players.load(flask.request.args)
 
+# call /teams to get all teams
+from dataloader import teams
+@app.route('/teams', methods=['GET'])
+def show_teams():   
+    # pass get url args for filtering
+    return teams.load(flask.request.args)
+
 # call /element-types to get all event types
 from dataloader import element_types
 @app.route('/element-types', methods=['GET'])
