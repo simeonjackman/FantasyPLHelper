@@ -24,6 +24,14 @@ def show_element_types():
     # pass get url args for filtering
     return element_types.load(flask.request.args)
 
+# call /events to get all event types
+from dataloader import events
+@app.route('/events', methods=['GET'])
+def show_events():   
+    # pass get url args for filtering
+    return events.load(flask.request.args)
+
+    
     
 
 if __name__ == "__main__":
