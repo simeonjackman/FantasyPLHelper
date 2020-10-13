@@ -17,6 +17,13 @@ def show_players():
     # pass get url args for filtering
     return players.load(flask.request.args)
 
+# call /element-types to get all event types
+from dataloader import element_types
+@app.route('/element-types', methods=['GET'])
+def show_element_types():   
+    # pass get url args for filtering
+    return element_types.load(flask.request.args)
+
     
 
 if __name__ == "__main__":
