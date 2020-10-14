@@ -74,8 +74,7 @@ Getter utility with basic filters for teams.
 ```
 ?name={name}
 ?show={key1,key2,...}
-ex: {host}/teams?
-name=team_name
+ex: {host}/teams?name=team_name
 ```
 
 ### /element-types
