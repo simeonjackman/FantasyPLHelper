@@ -3,8 +3,6 @@ import requests
 
 def load(args):
 	print(args)
-
-	return '[Hello World]'
 	
 	with open('/tmp/elements.json', 'r') as openfile: 
 		# Reading from json file 
