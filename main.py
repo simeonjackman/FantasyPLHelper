@@ -42,4 +42,6 @@ def show_events():
     
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # running with host="0.0.0.0" makes the localhost visible from
+    # outside of the docker container
+    app.run(debug=True, host="0.0.0.0")
