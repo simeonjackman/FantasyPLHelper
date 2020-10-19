@@ -1,7 +1,7 @@
 import flask
-from get_data import get_data
-
-get_data()
+from load import load
+load.data()
+load.fixtures()
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
