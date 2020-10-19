@@ -10,7 +10,7 @@ def load(args):
 		# Reading from json file 
 		json_object = json.load(openfile)
 
-    # finished
+    # finished fixtures
 	if args.get('finished') is not None:
 		filter_is_finished = str2bool(args.get('finished', default='', type=str))
 		print('filtering for finished {}'.format(filter_is_finished))
