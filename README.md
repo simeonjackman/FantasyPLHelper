@@ -87,7 +87,16 @@ ex:
 ### /events
 Getter utility with basic filters for events.
 ```
+?id={id}
+?from={id}
+?until={id}
+?is_previous={y/n}
+?is_current{y/n}
+?is_next={y/n}
+?finished={y/n}
+?data_checked={y/n}
+?deadline_after={YYYY-MM-DDZHH:MM:SS}
 ?show={key1,key2,...}
-ex:
+ex: {host}/events?from=10&until=20&finished=false&show=name,id,deadline_time
 ```
 
