@@ -62,10 +62,10 @@ Getter utility with basic filters for players.
 ?name={name}
 ?min_cost={cost}
 ?max_cost={cost}
-?goals_scored{goals}
-?assists{assists}
-?sort_by{key}
-?show{key1,key2,...}
+?goals_scored={goals}
+?assists={assists}
+?sort_by={key}
+?show={key1,key2,...}
 ex: {host}/players?sort_by=assists&name=f&show=first_name,second_name,goals_scored&min_cost=80
 ```
 
@@ -73,7 +73,38 @@ ex: {host}/players?sort_by=assists&name=f&show=first_name,second_name,goals_scor
 Getter utility with basic filters for teams.
 ```
 ?name={name}
+?id={id}
+
+?strength={strength}
+?max_strength={max_strength}
+?min_strength={min_strength}
+
+?strength_overall_home={strength_overall_home}
+?max_strength_overall_home={max_strength_overall_home}
+?min_strength_overall_home={min_strength_overall_home}
+
+?strength_overall_away={strength_overall_away}
+?max_strength_overall_away={max_strength_overall_away}
+?min_strength_overall_away={min_strength_overall_away}
+
+?strength_attack_home={strength_attack_home}
+?max_strength_attack_home={max_strength_attack_home}
+?min_strength_attack_home={min_strength_attack_home}
+
+?strength_attack_away={strength_attack_away}
+?max_strength_attack_away={max_strength_attack_away}
+?min_strength_attack_away={min_strength_attack_away}
+
+?strength_defence_home={strength_defence_home}
+?max_strength_defence_home={max_strength_defence_home}
+?min_strength_defence_home={min_strength_defence_home}
+
+?strength_defence_away={strength_defence_away}
+?max_strength_defence_away={max_strength_defence_away}
+?min_strength_defence_away={min_strength_defence_away}
+
 ?show={key1,key2,...}
+?sort_by={key}
 ex: {host}/teams?name=team_name
 ```
 
