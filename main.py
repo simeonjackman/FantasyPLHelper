@@ -38,8 +38,13 @@ def show_events():
     # pass get url args for filtering
     return events.load(flask.request.args)
 
-    
-    
+# call /fixtures to get all fixtures
+from dataloader import fixtures
+@app.route('/fixtures', methods=['GET'])
+def show_fixtures():
+    # pass get url args for filtering
+    return fixtures.load(flask.request.args)
+
 
 if __name__ == "__main__":
     # running with host="0.0.0.0" makes the localhost visible from

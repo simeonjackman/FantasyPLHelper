@@ -131,3 +131,9 @@ Getter utility with basic filters for events.
 ex: {host}/events?from=10&until=20&finished=false&show=name,id,deadline_time
 ```
 
+### /fixtures
+Getter utility with basic filters for events.
+```
+?show={key1,key2,...}
+ex:
+```
