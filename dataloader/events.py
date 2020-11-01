@@ -2,7 +2,7 @@ import json
 import requests
 
 from .utils import str2bool
-from .utils import correct_deadline_time_format
+from .utils import correct_time_format
 
 
 def load(args):
@@ -66,7 +66,7 @@ def load(args):
 	# filter deadline time
 	if args.get('deadline_after') is not None and args.get('deadline_after') != '':
 		filter_deadline = args.get('deadline_after', default='', type=str)
-		if correct_deadline_time_format(filter_deadline):
+		if correct_time_format(filter_deadline):
 			print('filtering for deadline after {}'.format(filter_deadline))
 			json_object = list(filter(lambda x: x['deadline_time'] > filter_deadline, json_object))
 

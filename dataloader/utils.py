@@ -20,7 +20,7 @@ DATE_EXP = '2[0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T'
 TIME_EXP = '[0-2][0-9]:[0-5][0-9]:[0-5][0-9]Z'
 
 
-def correct_deadline_time_format(fmt: str) -> bool:
+def correct_time_format(fmt: str) -> bool:
     """Check whether the deadline time has the right format
 
     Correct format and example:
