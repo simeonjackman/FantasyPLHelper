@@ -1,9 +1,11 @@
 import flask
+from flask_cors import CORS
 from load import load
 load.data()
 load.fixtures()
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+CORS(app) # This will enable CORS for all routes
 
 
 @app.route('/', methods=['GET'])
