@@ -134,6 +134,22 @@ ex: {host}/events?from=10&until=20&finished=false&show=name,id,deadline_time
 ### /fixtures
 Getter utility with basic filters for events.
 ```
+?finished={y/n}
+?kickoff_after={YYYY-MM-DDZHH:MM:SS}
+?team_h={team_id}
+?team_a={team_id}
+?team={team_id}
 ?show={key1,key2,...}
-ex:
+
+ex: 
+```
+
+### Scores
+Calculate a score for each queried player.
+
+**Scorer Points**
+Calculates the sum of the number of assists and the number of goals scored for each player.
+```
+{host}/players?score_scorer_points
+{host}/players?name=Kane&score_scorer_points
 ```
