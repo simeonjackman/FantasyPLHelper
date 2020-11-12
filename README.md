@@ -148,6 +148,7 @@ ex:
 Calculate a score for each queried player.
 
 **Scorer Points**
+
 Calculates the sum of the number of assists and the number of goals scored for each player.
 ```
 {host}/players?score_scorer_points
