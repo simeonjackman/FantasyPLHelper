@@ -19,6 +19,12 @@ def load(args):
 			filter_name.lower() in x['second_name'].lower() or
 			filter_name.lower() in x['web_name'].lower(), json_object))
 
+	# filter id
+	if args.get('id') is not None and args.get('id') != '':
+		filter_id = args.get('id', default='', type=int)
+		print("filtering id for {}".format(filter_id))
+		json_object = list(filter(lambda x: filter_id == x['id'], json_object))
+
 	# filter cost
 	if args.get('min_cost') is not None and args.get('min_cost') != '':
 		min_cost = args.get('min_cost', default=0, type=int)

@@ -140,8 +140,27 @@ Getter utility with basic filters for events.
 ?team_a={team_id}
 ?team={team_id}
 ?show={key1,key2,...}
-
 ex: 
+```
+
+### /top_player_picks
+Getter utility with basic filters for the picks of the top players.
+```
+?rank={rank}
+?show={key1,key2,...}
+ex: {host}/top_player_picks?rank=1
+```
+
+### /player2player
+Getter utility to show players who work well alongside a query player X. 
+
+Can be used to make recommendations of the form:
+> The best users who picked player X also picked player Y.
+
+```
+?id={player_id}
+?top={top}
+ex: {host}/player2player?id=388&top=3
 ```
 
 ### Scores
