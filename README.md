@@ -143,7 +143,7 @@ Getter utility with basic filters for events.
 ex: 
 ```
 
-### /top_player_picks
+### /top-player-picks
 Getter utility with basic filters for the picks of the top players.
 ```
 ?rank={rank}
@@ -151,25 +151,29 @@ Getter utility with basic filters for the picks of the top players.
 ex: {host}/top_player_picks?rank=1
 ```
 
-### /player2player
+### /player-to-player/\<player_id>
 Getter utility to show players who work well alongside a query player X. 
 
 Can be used to make recommendations of the form:
 > The best users who picked player X also picked player Y.
 
 ```
-?id={player_id}
 ?top={top}
-ex: {host}/player2player?id=388&top=3
+ex: {host}/player-to-player/388?top=3
 ```
 
-### Scores
+### /player-summary/\<player_id>
+Getter utility for player summaries.
+```
+ex: {host}/player-summary/388
+```
+
+### /scores/\<score>
 Calculate a score for each queried player.
 
 **Scorer Points**
 
 Calculates the sum of the number of assists and the number of goals scored for each player.
 ```
-{host}/players?score_scorer_points
-{host}/players?name=Kane&score_scorer_points
+ex: {host}/player-score/scorer-points
 ```
