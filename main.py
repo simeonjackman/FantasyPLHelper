@@ -2,13 +2,19 @@ import json
 import flask
 from flask_cors import CORS
 from load import load
-load.data()
-load.fixtures()
-load.top_squads(top_k=50)
+
+
+N_TOP_USERS = 50 * 1
+def load_data():
+    load.data()
+    load.fixtures()
+    load.top_squads(top_k=N_TOP_USERS)
+
+
+load_data()
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 CORS(app) # This will enable CORS for all routes
-
 
 # routes
 @app.route('/', methods=['GET'])
@@ -52,21 +58,32 @@ def show_fixtures():
 
 # call /top_player_picks to get the picks from top players
 from dataloader import top_player_picks
-@app.route('/top_player_picks', methods=['GET'])
+@app.route('/top-player-picks', methods=['GET'])
 def show_top_player_picks():
     # pass get url args for filtering
     return top_player_picks.load(flask.request.args)
 
-# call /recommend to get a recommendation from collaborative filtering
-from recommender import build_recommender_system_from_loader
-from recommender import parse_args, parse_response
-rec_system = build_recommender_system_from_loader(top_player_picks)
-@app.route('/player2player', methods=['GET'])
-def player2player():
+# call /player-to-player/player_id
+from routes import player_to_player
+rec_system = player_to_player._build_recommender_system(top_player_picks)
+@app.route('/player-to-player/<player_id>', methods=['GET'])
+def player_to_player_(player_id):
     # who do the top users pick alongside player with id=X?
-    player_id, top = parse_args(flask.request.args)
-    ids, values = rec_system.item_to_item(player_id, top=top)
-    return parse_response(ids, values)
+    return player_to_player.get(player_id, flask.request.args, rec_system)
+
+# call /player-summary/player_id to get a player summary
+from routes import player_summary
+@app.route('/player-summary/<player_id>', methods=['GET'])
+def player_summary_(player_id):
+    # pass player_id and url args
+    return player_summary.get(player_id, flask.request.args)
+
+# call /player-score/score to get the score for a player
+from routes import player_score
+@app.route('/score/<score>', methods=['GET'])
+def player_score_(score):
+    # pass score and args
+    return player_score.get(score, flask.request.args)
 
 
 if __name__ == "__main__":

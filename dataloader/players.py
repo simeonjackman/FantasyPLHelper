@@ -1,8 +1,6 @@
 import json
 import requests
 
-import dataloader.scores as scores
-
 def load(args):
 	print(args)
 	
@@ -53,15 +51,6 @@ def load(args):
 		scorer_points = args.get('scorer_points', default=0, type=int)
 		print("filtering scorer points >= {}".format(scorer_points))
 		json_object = list(filter(lambda x: scorer_points < x['assists'] + x['goals_scored'], json_object))
-
-	# scores
-	FANTASY_HELPER_PREFIX = 'fhp_score_'
-
-	# score: scorer points
-	if args.get('score_scorer_points') is not None:
-		score_fn = scores.ScorerPointsScoreFunction()
-		for item in json_object:
-			item[FANTASY_HELPER_PREFIX + score_fn.__name__] = score_fn(item)
 
 	# sort_by
 	if args.get('sort_by') is not None and args.get('sort_by') != '' and len(json_object) > 0 and args.get('sort_by') in json_object[0]:

@@ -66,8 +66,8 @@ class Squad:
 
     @classmethod
     def optimal_from_scratch(cls,
-                            players: List[Player],
-                            values: List[int]):
+                             players: List[Player],
+                             values: List[int]):
         """Greedily builds team from scratch while trying to max values.
 
         """

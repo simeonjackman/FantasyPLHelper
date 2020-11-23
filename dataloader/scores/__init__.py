@@ -1,2 +1,0 @@
-
-from dataloader.scores.scorer_points import ScorerPointsScoreFunction
